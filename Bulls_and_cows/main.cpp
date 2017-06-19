@@ -8,7 +8,12 @@
 
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
-    std::cout << "Hello, World!\n";
+using namespace std;
+
+int main() {
+    // Use constants for variables that do not change
+    constexpr int WORD_LENGTH = 9;
+    cout << "Welcome to Bulls and Cows" << endl;
+    cout << "Can you guess the " << WORD_LENGTH << " letter isogram im thinking of" << endl;
     return 0;
 }
