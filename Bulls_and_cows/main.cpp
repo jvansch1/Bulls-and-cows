@@ -1,16 +1,5 @@
-//
-//  main.cpp
-//  Bulls_and_cows
-//
-//  Created by john van schultz on 6/19/17.
-//  Copyright © 2017 john van schultz. All rights reserved.
-//
-
 #include <iostream>
-
-// include string
 #include <string>
-
 
 using namespace std;
 
@@ -19,12 +8,19 @@ void print_intro();
 string get_guess();
 void repeat_guess(string guess);
 void play_game();
-
+bool ask_to_play_again();
 
 int main() {
     
+    bool play_again = false;
+    
     print_intro();
-    play_game();
+    do {
+        play_game();
+        play_again = ask_to_play_again();
+    } while (play_again);
+    
+    cout << "\nThanks for playing!";
     
     return 0;
 }
@@ -35,6 +31,18 @@ void play_game() {
         string result = get_guess();
         repeat_guess(result);
         cout << endl;
+    }
+}
+
+bool ask_to_play_again() {
+    string reply;
+    cout << "Do you want to play again?(y for yes, n for no) \n";
+    getline(cin, reply);
+    
+    if (reply[0] == 'y' || reply[0] == 'Y') {
+        return true;
+    } else {
+        return false;
     }
 }
 
