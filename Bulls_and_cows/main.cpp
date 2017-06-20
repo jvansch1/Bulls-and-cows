@@ -23,6 +23,8 @@ int main() {
         play_again = ask_to_play_again();
     } while (play_again);
     
+    
+    
     std::cout << "\nThanks for playing!";
     
     return 0;
@@ -30,7 +32,6 @@ int main() {
 
 void play_game() {
     int max_tries = BCGame.get_max_tries();
-    std::cout << max_tries;
     for (int i = 0; i < max_tries; i++) {
         std::string result = get_guess();
         repeat_guess(result);
@@ -60,8 +61,9 @@ void print_intro() {
 
 std::string get_guess() {
     std::string player_input = "";
-    std::cout << "Please enter your guess: ";
+    std::cout << "Try " << BCGame.get_current_try() << ": Please enter your guess: ";
     std::getline(std::cin, player_input);
+    BCGame.iterate_try();
     return player_input;
 }
 

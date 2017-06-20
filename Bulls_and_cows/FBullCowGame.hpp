@@ -17,11 +17,12 @@ public:
     void reset(); // Todo make a more rich return value
     int get_max_tries();
     int get_current_try();
+    void iterate_try();
     bool is_game_won();
     bool is_guess_valid(std::string);
     
 private:
-    int my_current_try;
+    int my_current_try = 1;
     int my_max_tries = 10;
 };
 
