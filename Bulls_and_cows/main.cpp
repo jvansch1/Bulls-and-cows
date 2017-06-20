@@ -14,14 +14,11 @@
 
 using namespace std;
 
+void print_intro();
+
 int main() {
-    // introduce the game
     
-    // Use constants for variables that do not change
-    
-    constexpr int WORD_LENGTH = 9;
-    cout << "Welcome to Bulls and Cows\n";
-    cout << "Can you guess the " << WORD_LENGTH << " letter isogram im thinking of\n";
+    print_intro();
     
     // get a guess from the player
     
@@ -35,3 +32,17 @@ int main() {
 
     return 0;
 }
+
+void print_intro() {
+    // introduce the game
+    
+    // Use constants for variables that do not change
+    constexpr int WORD_LENGTH = 9;
+    
+    cout << "Welcome to Bulls and Cows\n";
+    cout << "Can you guess the " << WORD_LENGTH << " letter isogram im thinking of\n";
+    return;
+
+}
+
+
