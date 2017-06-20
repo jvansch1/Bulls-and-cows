@@ -18,25 +18,28 @@ using namespace std;
 void print_intro();
 string get_guess();
 void repeat_guess(string guess);
+void play_game();
 
 
 int main() {
     
-    constexpr int GAME_LENGTH = 9;
     print_intro();
+    play_game();
+    
+    return 0;
+}
+
+void play_game() {
+    constexpr int GAME_LENGTH = 5;
     for (int i = 0; i < GAME_LENGTH; i++) {
         string result = get_guess();
         repeat_guess(result);
         cout << endl;
     }
-    return 0;
 }
 
 void print_intro() {
-    // introduce the game
-    // Use constants for variables that do not change
-    constexpr int WORD_LENGTH = 9;
-    
+    constexpr int WORD_LENGTH = 5;
     cout << "Welcome to Bulls and Cows\n";
     cout << "Can you guess the " << WORD_LENGTH << " letter isogram im thinking of\n";
     cout << endl;
@@ -44,8 +47,6 @@ void print_intro() {
 }
 
 string get_guess() {
-    // get a guess from the player
-    
     string player_input = "";
     cout << "Please enter your guess: ";
     getline(cin, player_input);
