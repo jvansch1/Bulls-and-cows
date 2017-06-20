@@ -14,22 +14,16 @@
 
 using namespace std;
 
+// must prototype functions if they appear below main
 void print_intro();
+string get_guess();
+void repeat_guess(string guess);
 
 int main() {
     
     print_intro();
-    
-    // get a guess from the player
-    
-    string player_input = "";
-    cout << "Please enter your guess: ";
-    getline(cin, player_input);
-    
-    // repeat guess
-    
-    cout << "You guessed: " << player_input << endl;
-
+    string result = get_guess();
+    repeat_guess(result);
     return 0;
 }
 
@@ -43,6 +37,20 @@ void print_intro() {
     cout << "Can you guess the " << WORD_LENGTH << " letter isogram im thinking of\n";
     return;
 
+}
+
+string get_guess() {
+    // get a guess from the player
+    
+    string player_input = "";
+    cout << "Please enter your guess: ";
+    getline(cin, player_input);
+    return player_input;
+}
+
+void repeat_guess(string guess) {
+    cout << "You guessed: " << guess << endl;
+    return;
 }
 
 
