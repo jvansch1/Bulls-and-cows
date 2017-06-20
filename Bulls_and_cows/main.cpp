@@ -19,24 +19,28 @@ void print_intro();
 string get_guess();
 void repeat_guess(string guess);
 
+
 int main() {
     
+    constexpr int GAME_LENGTH = 9;
     print_intro();
-    string result = get_guess();
-    repeat_guess(result);
+    for (int i = 0; i < GAME_LENGTH; i++) {
+        string result = get_guess();
+        repeat_guess(result);
+        cout << endl;
+    }
     return 0;
 }
 
 void print_intro() {
     // introduce the game
-    
     // Use constants for variables that do not change
     constexpr int WORD_LENGTH = 9;
     
     cout << "Welcome to Bulls and Cows\n";
     cout << "Can you guess the " << WORD_LENGTH << " letter isogram im thinking of\n";
+    cout << endl;
     return;
-
 }
 
 string get_guess() {
