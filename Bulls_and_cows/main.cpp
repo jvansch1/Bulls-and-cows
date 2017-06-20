@@ -27,7 +27,7 @@ int main() {
     
     string player_input = "";
     cout << "Please enter your guess: ";
-    cin >> player_input;
+    getline(cin, player_input);
     
     // repeat guess
     
