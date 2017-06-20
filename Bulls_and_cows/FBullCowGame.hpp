@@ -15,10 +15,10 @@
 class FBullCowGame {
 public:
     void reset(); // Todo make a more rich return value
-    int get_max_tries();
-    int get_current_try();
+    int get_max_tries() const;
+    int get_current_try() const;
     void iterate_try();
-    bool is_game_won();
+    bool is_game_won() const;
     bool is_guess_valid(std::string);
     
 private:

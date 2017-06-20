@@ -13,11 +13,11 @@ void FBullCowGame::reset() {
     return;
 }
 
-int FBullCowGame::get_max_tries() {
+int FBullCowGame::get_max_tries() const {
     return my_max_tries;
 }
 
-int FBullCowGame::get_current_try() {
+int FBullCowGame::get_current_try() const {
     return my_current_try;
 }
 
