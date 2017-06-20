@@ -22,7 +22,7 @@ public:
     
 private:
     int my_current_try;
-    int my_max_tries;
+    int my_max_tries = 10;
 };
 
 #endif /* FBullCowGame_hpp */

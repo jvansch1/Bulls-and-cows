@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "FBullCowGame.hpp"
 
 
 
@@ -9,6 +10,8 @@ std::string get_guess();
 void repeat_guess(std::string guess);
 void play_game();
 bool ask_to_play_again();
+
+FBullCowGame BCGame; // instantiate game class
 
 int main() {
     
@@ -26,8 +29,9 @@ int main() {
 }
 
 void play_game() {
-    constexpr int GAME_LENGTH = 5;
-    for (int i = 0; i < GAME_LENGTH; i++) {
+    int max_tries = BCGame.get_max_tries();
+    std::cout << max_tries;
+    for (int i = 0; i < max_tries; i++) {
         std::string result = get_guess();
         repeat_guess(result);
         std::cout << std::endl;
